@@ -2,6 +2,7 @@ package main;
 
 import biblioteca.Biblioteca;
 import biblioteca.Livro;
+import biblioteca.Usuario;
 import biblioteca.Usuário;
 
 public class Main {
@@ -12,7 +13,7 @@ public class Main {
         
         Livro livroUm = new Livro("Paulinho em Nárnia", "Se eu te conta", "Fé", "Mistério");
         
-        Usuario usuarioUm = new Usuario("Linguini", "salsa@gmail.com", "217802");
+        Usuario usuarioUm = new Usuario("Linguini", "salsa@gmail.com", 217802);
         
         biblioteca.addLivro(livroUm);
         
