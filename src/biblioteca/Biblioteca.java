@@ -5,7 +5,7 @@ public class Biblioteca {
 	private int livroCount;
 
 	
-	public Biblioteca(int maxLivros) {]
+	public Biblioteca(int maxLivros) {
 		
 			livros = new Livro[maxLivros];
 			livroCount = 0;
@@ -25,29 +25,40 @@ public class Biblioteca {
 	public void listaLivros() {
 		System.out.println("Livros na biblioteca:");
 		for(int i = 0; i < livroCount; i++) {
-			System.out.println(livros[i].getNome() + " (" + livros[i].assunto + "), Autor: "
-			+ livros[i].autor + ". Editora: " + livros[i].editora + ". Status: " + 
-			livros[i].livroStatus);
+			System.out.println(livros[i].getNome() + " (" + livros[i].getAssunto() + "), Autor: "
+			+ livros[i].getAutor() + ". Editora: " + livros[i].getEditora() + ". Status: " + 
+			livros[i].getLivroStatus());
 		}
 	}
 	
 	public void alugaLivro(Usuario aluno, Livro livro){
-	    if(livro.livroStatus == true){
-	        livro.livroStatus == false;
-	        System.out.printIn("O usuário" + aluno.nome "alugou o livro" + livro.nome "!");
+	    if(livro.getLivroStatus() == true){
+	    	livro.setLivroStatus(false);
+	        System.out.println("O usuário " + aluno.getNome() + " alugou o livro" + livro.getNome() + " !");
+	        
+	        //Construir uma forma de temporizar uma retirada de livro, mas ainda assim sem fazer uma interrupção no proprio  código !!
+	        
+	        //	IDEIA: fazer uma marcação na hora em que o livro e fazer uma  lista composta por livros já alugados e 
+	        //			fazer uma comparação  com a hora atual.
+	        //			
+	        //			POTENCIAL DE EXPANSÃO: utilizar um contador negativo para dias em atraso e penalização distintas
+
 	    }
 	    else{
-	        System.out.printIn("O livro" + livro.nome " já está alugado :(");
+	        System.out.println("O livro " + livro.getNome() +  " já está alugado :(");
 	    }
 	}
 	
     public void devolveLivro(Usuario aluno, Livro livro){
-	    if(livro.livroStatus == false){
-	        livro.livroStatus == true;
-	        System.out.printIn("O usuário" + aluno.nome "devolveu o livro" + livro.nome "!");
+	    if(livro.getLivroStatus() == false){
+	    	livro.setLivroStatus(true);
+	        System.out.println("O usuário " + aluno.getNome() + " devolveu o livro " + livro.getNome() + " !");
 	    }
 	    else{
-	        System.out.printIn("O livro" + livro.nome "não foi alugado !");
+	        System.out.println("O livro " + livro.getNome() +   " não foi alugado !");
 	    }
 	}
+    
+  
+    
 }

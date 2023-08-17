@@ -7,9 +7,8 @@ public class Livro {
 	private String editora;
 	private String autor;
 	private String assunto;
-	
-	//atributo privado sem getter
 	private boolean livroStatus;
+	private int livroTimer;
 	
 	//construtor da classe
 	public Livro(String nome, String editora, String autor, String assunto) {
@@ -17,11 +16,11 @@ public class Livro {
 		this.editora = editora;
 		this.autor = autor;
 		this.assunto = assunto;
-		//inicializa disponível
+		
+		//inicializa disponível e timer máximo
 		this.livroStatus = true;
+		this.livroTimer = 100;
 	}
-	
-	//Metodos da classe
 	
 	
 	//Getters para acessar os atributos privado
@@ -39,6 +38,22 @@ public class Livro {
 	
 	public String getAssunto() {
 		return assunto;
+	
+	}
+	public boolean getLivroStatus() {
+		return livroStatus;
+	}
+	
+	public int getLivroTimer() {
+		return livroTimer;
+	}
+	
+	public void setLivroStatus(boolean novoStatus) {
+		this.livroStatus = novoStatus;
+	}
+	
+	public void setLivroTimer(int novoTimer) {
+		this.livroTimer = novoTimer; 
 	}
 	
 }

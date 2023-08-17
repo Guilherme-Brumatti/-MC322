@@ -6,23 +6,22 @@ public class Usuario {
 	private String nome;
 	private String email;
 	private int ra;
-	private boolean status;
+	private boolean usuarioStatus;
 					
 	//construtor da classe
 	public Usuario(String nome, String email, int ra) {
 		this.nome = nome;
 		this.email = email;
 		this.ra = ra;
-		System.out.println("TETYYEY");
-		// AGSADAAARA
-		//true = Não há pendencias
+		
+		//true = Não há pendencias 	FAZER UM ENUM
 		//false = Há pendências
-		this.status = true;
+		
+		//Utilizado posteriormente para alterar de acordo com os  empréstimos e possíveis mutas
+		this.usuarioStatus = true;
 	}
 	
-	//Metodos da classe
-	
-	
+
 	//Getters para acessar os atributos privado
 	public String getNome() {
 		return nome;
@@ -36,8 +35,14 @@ public class Usuario {
 		return ra;
 	}
 	
-	public boolean getStatus() {
-		return status;
+	
+	//Utilizado posteriormente para alterar de acordo com os  empréstimos e possíveis mutas
+	
+	public boolean getUsuarioStatus() {
+		return usuarioStatus;
 	}
 	
+	public void setUsuarioStatus(boolean novoStatus) {
+		this.usuarioStatus = novoStatus;
+	}
 }
