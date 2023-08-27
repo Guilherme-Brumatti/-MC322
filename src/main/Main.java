@@ -1,8 +1,11 @@
 package main;
 
 import biblioteca.Biblioteca;
-import biblioteca.Livro;
-import biblioteca.Usuario;
+import biblioteca.Emprestimo;
+import biblioteca.Item;
+import item.LivroFisico;
+import membro.EstudanteGraduacao;
+import membro.Membro;
 
 public class Main {
 
@@ -10,29 +13,30 @@ public class Main {
 		
         Biblioteca biblioteca = new Biblioteca(5);
         
-        Livro livroUm = new Livro("Paulinho em Nárnia", "Se eu te conta", "Logo ele", "Mistério");
-        Livro livroDois = new Livro("O Hobbit", "WMF Martins Fontes", "J.R.R. Tolkien", "Fantasia");
-        Livro livroTres = new Livro("Harry Potter e as Relíquias da Morte", "Rocco", "J.K. Rowling", "F");
-        Livro livroQuatro = new Livro("O Senhor dos Aneis", "WMF Martins Fontes", "J.R.R. Tolkien", "Fantasia");
+        LivroFisico livroFisicoUm = new LivroFisico(new Item("Paulinho em Nárnia", "Se eu te conta", "Logo ele", "Mistério"));
+        LivroFisico livroFisicoDois = new LivroFisico(new Item("O Hobbit", "WMF Martins Fontes", "J.R.R. Tolkien", "Fantasia"));
+        LivroFisico livroFisicoTres = new LivroFisico(new Item("Harry Potter e as Relíquias da Morte", "Rocco", "J.K. Rowling", "F"));
+        LivroFisico livroFisicoQuatro = new LivroFisico(new Item("O Senhor dos Aneis", "WMF Martins Fontes", "J.R.R. Tolkien", "Fantasia"));
         
-        biblioteca.addLivro(livroUm);
-        biblioteca.addLivro(livroDois);
-        biblioteca.addLivro(livroTres);
-        biblioteca.addLivro(livroQuatro);
+        biblioteca.addLivro(livroFisicoUm);
+        biblioteca.addLivro(livroFisicoDois);
+        biblioteca.addLivro(livroFisicoTres);
+        biblioteca.addLivro(livroFisicoQuatro);
         
         biblioteca.listaLivros();
         
+        Emprestimo[] Emprestimos = new Emprestimo[10];
         
-        Usuario usuarioUm = new Usuario("Linguini", "salsa@gmail.com", 217802);
+        EstudanteGraduacao usuarioUm = new EstudanteGraduacao(new Membro("Linguini", "salsa@gmail.com", 217802, Emprestimos));
         
-        Usuario usuarioDois = new Usuario("Cenoura", "tangeras@gmail.com", 123456);
+        EstudanteGraduacao usuarioDois = new EstudanteGraduacao(new Membro("Cenoura", "tangeras@gmail.com", 123456, Emprestimos));
         
         
-        biblioteca.alugaLivro(usuarioUm, livroUm);
+        biblioteca.alugaLivro(usuarioUm, livroFisicoUm);
         
-        biblioteca.alugaLivro(usuarioDois, livroUm);
+        biblioteca.alugaLivro(usuarioDois, livroFisicoDois);
         
-        biblioteca.devolveLivro(usuarioUm, livroUm);
+        biblioteca.devolveLivro(usuarioUm, livroFisicoTres);
         
         
 	}

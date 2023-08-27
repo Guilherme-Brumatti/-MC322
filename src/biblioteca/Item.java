@@ -1,6 +1,6 @@
 package biblioteca;
 
-public class Livro {
+public class Item {
 	
 	//atributos da classe
 	private String nome;
@@ -11,7 +11,7 @@ public class Livro {
 	private int livroTimer;
 	
 	//construtor da classe
-	public Livro(String nome, String editora, String autor, String assunto) {
+	public Item(String nome, String editora, String autor, String assunto) {
 		this.nome = nome;
 		this.editora = editora;
 		this.autor = autor;

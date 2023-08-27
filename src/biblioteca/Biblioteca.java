@@ -1,22 +1,25 @@
 package biblioteca;
 
+import item.LivroFisico;
+import membro.EstudanteGraduacao;
+
 public class Biblioteca {
-	private Livro[] livros;
+	private LivroFisico[] livros;
 	private int livroCount;
 
 	
 	public Biblioteca(int maxLivros) {
 		
-			livros = new Livro[maxLivros];
+			livros = new LivroFisico[maxLivros];
 			livroCount = 0;
 		// TODO Auto-generated constructor stub
 	}
 
-	public void addLivro(Livro livro) {
+	public void addLivro(LivroFisico livro) {
 		if(livroCount < livros.length) {
 			livros[livroCount] = livro;
 			livroCount++;
-			System.out.println("Livro adicionado a biblioteca: " + livro.getNome());
+			System.out.println("Livro adicionado a biblioteca: " + livro.getDados().getNome());
 		} else {
 			System.out.println("A biblioteca esta cheia, não é possível adicionar mais livros.");
 		}
@@ -25,16 +28,16 @@ public class Biblioteca {
 	public void listaLivros() {
 		System.out.println("Livros na biblioteca:");
 		for(int i = 0; i < livroCount; i++) {
-			System.out.println(livros[i].getNome() + " (" + livros[i].getAssunto() + "), Autor: "
-			+ livros[i].getAutor() + ". Editora: " + livros[i].getEditora() + ". Status: " + 
-			livros[i].getLivroStatus());
+			System.out.println(livros[i].getDados().getNome() + " (" + livros[i].getDados().getAssunto() + "), Autor: "
+			+ livros[i].getDados().getAutor() + ". Editora: " + livros[i].getDados().getEditora() + ". Status: " + 
+			livros[i].getDados().getLivroStatus());
 		}
 	}
 	
-	public void alugaLivro(Usuario aluno, Livro livro){
-	    if(livro.getLivroStatus() == true){
-	    	livro.setLivroStatus(false);
-	        System.out.println("O usuário " + aluno.getNome() + " alugou o livro" + livro.getNome() + " !");
+	public void alugaLivro(EstudanteGraduacao aluno, LivroFisico livro){
+	    if(livro.getDados().getLivroStatus() == true){
+	    	livro.getDados().setLivroStatus(false);
+	        System.out.println("O usuário " + aluno.getInformacoes().getNome() + " alugou o livro" + livro.getDados().getNome() + " !");
 	        
 	        //Construir uma forma de temporizar uma retirada de livro, mas ainda assim sem fazer uma interrupção no proprio  código !!
 	        
@@ -45,17 +48,17 @@ public class Biblioteca {
 
 	    }
 	    else{
-	        System.out.println("O livro " + livro.getNome() +  " já está alugado :(");
+	        System.out.println("O livro " + livro.getDados().getNome() +  " já está alugado :(");
 	    }
 	}
 	
-    public void devolveLivro(Usuario aluno, Livro livro){
-	    if(livro.getLivroStatus() == false){
-	    	livro.setLivroStatus(true);
-	        System.out.println("O usuário " + aluno.getNome() + " devolveu o livro " + livro.getNome() + " !");
+    public void devolveLivro(EstudanteGraduacao aluno, LivroFisico livro){
+	    if(livro.getDados().getLivroStatus() == false){
+	    	livro.getDados().setLivroStatus(true);
+	        System.out.println("O usuário " + aluno.getInformacoes().getNome() + " devolveu o livro " + livro.getDados().getNome() + " !");
 	    }
 	    else{
-	        System.out.println("O livro " + livro.getNome() +   " não foi alugado !");
+	        System.out.println("O livro " + livro.getDados().getNome() +   " não foi alugado !");
 	    }
 	}
     
