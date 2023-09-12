@@ -4,22 +4,26 @@ public class Item {
 	
 	//atributos da classe
 	private String nome;
-	private String editora;
 	private String autor;
+	private String editora;
+	private String anopublicacao;
 	private String assunto;
+	private String sinopse;
+	private String capa;
 	private boolean livroStatus;
-	private int livroTimer;
 	
 	//construtor da classe
-	public Item(String nome, String editora, String autor, String assunto) {
+	public Item(String nome, String editora, String autor, String assunto, String anopublicacao, String sinopse, String capa) {
 		this.nome = nome;
 		this.editora = editora;
 		this.autor = autor;
 		this.assunto = assunto;
+		this.anopublicacao = anopublicacao;
+		this.sinopse = sinopse;
+		this.capa = capa;
 		
 		//inicializa disponível e timer máximo
 		this.livroStatus = true;
-		this.livroTimer = 100;
 	}
 	
 	
@@ -38,22 +42,26 @@ public class Item {
 	
 	public String getAssunto() {
 		return assunto;
-	
 	}
+	
+	public String getAnopublicacao() {
+		return anopublicacao;
+	}
+	
+	public String getSinopse() {
+		return sinopse;
+	}
+	
+	public String getCapa() {
+		return capa;
+	}
+	
 	public boolean getLivroStatus() {
 		return livroStatus;
 	}
 	
-	public int getLivroTimer() {
-		return livroTimer;
-	}
-	
 	public void setLivroStatus(boolean novoStatus) {
 		this.livroStatus = novoStatus;
-	}
-	
-	public void setLivroTimer(int novoTimer) {
-		this.livroTimer = novoTimer; 
 	}
 	
 }
