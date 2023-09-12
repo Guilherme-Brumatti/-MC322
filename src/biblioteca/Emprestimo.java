@@ -1,27 +1,29 @@
 package biblioteca;
 
+import java.time.LocalDate;
 import java.util.Date;
 
+import item.Item;
 import membro.Membro;
 
 public class Emprestimo {
 
 	private Membro membroResponsavel;
 	private Item itemEmprestado;
-	private Date dataEmprestimo;
+	private LocalDate dataEmprestimo;
 	
-	public Emprestimo(Membro membroResponsavel, Item itemEmprestado, Date dataEmprestimo) {
+	public Emprestimo(Membro membroResponsavel, Item itemEmprestado, LocalDate dataEmprestimo) {
 		this.membroResponsavel = membroResponsavel;
 		this.itemEmprestado = itemEmprestado;
 		this.dataEmprestimo = dataEmprestimo;
 	}
 	
 	//Getter e Setter
-	public Date getDataEmprestimo() {
+	public LocalDate getDataEmprestimo() {
 		return this.dataEmprestimo;
 	}
 	
-	public void setDataEmprestimo(Date dataEmprestimo) {
+	public void setDataEmprestimo(LocalDate dataEmprestimo) {
 		this.dataEmprestimo = dataEmprestimo;
 	}
 	

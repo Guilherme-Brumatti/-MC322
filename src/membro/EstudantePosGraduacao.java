@@ -1,19 +1,14 @@
 package membro;
 
-public class EstudantePosGraduacao {
+public class EstudantePosGraduacao extends Membro {
 	
-	private Membro informacoes;
-	
-	public EstudantePosGraduacao(Membro informacoes) {
-		this.informacoes = informacoes;
+	public EstudantePosGraduacao(String nome, String email, int ra) {
+		super(nome,email,ra);
+		
+		limiteEmprestimo = 5;
+		prazoEmprestimo = 10;
+		multaAtraso = 1.0;
+						
 	}
 	
-	public Membro getInformacoes() {
-		return this.informacoes;
-	}
-	
-	public void setInformacoes(Membro informacoes) {
-		this.informacoes = informacoes;
-	}
-
 }

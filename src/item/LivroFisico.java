@@ -1,7 +1,5 @@
 package item;
 
-import biblioteca.Item;
-
 public class LivroFisico extends Item {
 	
 	private String isbn;

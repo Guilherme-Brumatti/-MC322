@@ -1,19 +1,8 @@
 package membro;
 
-public class Gerente {
-	
-	private Funcionario dadosFuncionarioGerente;
-	
-	public Gerente(Funcionario dadosFuncionarioGerente) {
-		this.dadosFuncionarioGerente = dadosFuncionarioGerente;
-	}
+public class Gerente extends Funcionario {
 
-	public Funcionario getDadosFuncionarioAtendente() {
-		return dadosFuncionarioGerente;
+	public Gerente(String nome, String email, int ra) {
+		super(nome,email,ra);
 	}
-
-	public void getDadosFuncionarioAtendente(Funcionario dadosFuncionarioGerente) {
-		this.dadosFuncionarioGerente = dadosFuncionarioGerente;
-	}
-
 }

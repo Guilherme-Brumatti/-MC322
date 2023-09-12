@@ -1,7 +1,5 @@
 package item;
 
-import biblioteca.Item;
-
 public class CDAudio extends Item {
 
 	private String lista_faixas;

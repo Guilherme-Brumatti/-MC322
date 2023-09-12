@@ -1,7 +1,5 @@
 package item;
 
-import biblioteca.Item;
-
 public class DVDVideo extends Item {
 	
 	private String elenco;

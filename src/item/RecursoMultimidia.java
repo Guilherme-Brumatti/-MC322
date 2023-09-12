@@ -1,7 +1,5 @@
 package item;
 
-import biblioteca.Item;
-
 public class RecursoMultimidia extends Item {
 	
 	private String recurso;

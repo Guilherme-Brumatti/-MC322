@@ -1,7 +1,5 @@
 package item;
 
-import biblioteca.Item;
-
 public class LivroEletronico extends Item {
 	
 	private String formato_arquivo;

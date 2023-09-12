@@ -1,4 +1,4 @@
-package biblioteca;
+package item;
 
 public class Item {
 	
@@ -10,7 +10,7 @@ public class Item {
 	private String assunto;
 	private String sinopse;
 	private String capa;
-	private boolean livroStatus;
+	private boolean itemStatus;
 	
 	//construtor da classe
 	public Item(String nome, String editora, String autor, String assunto, String anopublicacao, String sinopse, String capa) {
@@ -23,7 +23,7 @@ public class Item {
 		this.capa = capa;
 		
 		//inicializa disponível e timer máximo
-		this.livroStatus = true;
+		this.itemStatus = true;
 	}
 	
 	
@@ -56,12 +56,12 @@ public class Item {
 		return capa;
 	}
 	
-	public boolean getLivroStatus() {
-		return livroStatus;
+	public boolean getItemStatus() {
+		return itemStatus;
 	}
 	
-	public void setLivroStatus(boolean novoStatus) {
-		this.livroStatus = novoStatus;
+	public void setItemStatus(boolean novoStatus) {
+		this.itemStatus = novoStatus;
 	}
 	
 }

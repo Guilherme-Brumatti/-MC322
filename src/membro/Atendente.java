@@ -1,18 +1,8 @@
 package membro;
 
-public class Atendente {
-	
-	private Funcionario dadosFuncionarioAtendente;
-	
-	public Atendente(Funcionario dadosFuncionarioAtendente) {
-		this.dadosFuncionarioAtendente = dadosFuncionarioAtendente;
-	}
+public class Atendente extends Funcionario {
 
-	public Funcionario getDadosFuncionarioAtendente() {
-		return dadosFuncionarioAtendente;
-	}
-
-	public void setDadosFuncionarioAtendente(Funcionario dadosFuncionarioAtendente) {
-		this.dadosFuncionarioAtendente = dadosFuncionarioAtendente;
+	public Atendente(String nome, String email, int ra) {
+		super(nome,email,ra);
 	}
 }

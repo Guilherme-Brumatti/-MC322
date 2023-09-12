@@ -1,19 +1,14 @@
 package membro;
 
-public class EstudanteGraduacao {
+public class EstudanteGraduacao extends Membro {
 	
-	//Utilizando Agregação
-	private Membro informacoes;
-	
-	public EstudanteGraduacao(Membro informacoes) {
-		this.informacoes = informacoes;
+	public EstudanteGraduacao(String nome, String email, int ra) {
+		super(nome,email,ra);
+		
+		limiteEmprestimo = 3;
+		prazoEmprestimo = 15;
+		multaAtraso = 1;
+						
 	}
 	
-	public Membro getInformacoes() {
-		return this.informacoes;
-	}
-	
-	public void setInformacoes(Membro informacoes) {
-		this.informacoes = informacoes;
-	}
 }
